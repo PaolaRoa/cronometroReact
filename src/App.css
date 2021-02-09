@@ -151,7 +151,7 @@ h2{
 
 @media(max-width: 599px){
     #display{
-        font-size: 24px;
+        font-size: 5vw;
     }
     #screen{
         width: 90vw;
