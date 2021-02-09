@@ -94,7 +94,7 @@ const Cronometro = () => {
 
 
     return(
-        <>
+       <div className = "container">
         {/* renderizamos un div que es el screen, y asignamos la clase segun el estado del cronometro */}
             <div id="screen" className = {isStop === "running"? "inactive" : "active"}>
                 {/* dentro del div display llamamos el componente contador al cual le pasamos el time como prop */}
@@ -105,8 +105,7 @@ const Cronometro = () => {
             </div>
             {/* llamamos el componente buttons y le pasamos sus props */}
             <Buttons handleStatus = {handleStatus} isStop = {isStop} reset= {reset} vuelta= {vuelta} vueltas = {vueltas}/>
-            
-        </>
+        </div>    
     )
 }
 
