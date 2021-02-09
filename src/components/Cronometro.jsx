@@ -4,17 +4,16 @@ import Contador from './Contador';
 
 const Cronometro = () => {
    
-    //variable que me guarda el tiempo en centesimas
-    // const [miliS, setmiliS] = useState(0)
     //estado que me define si el cronometro esta corriendo o esta detenido
+    //desestructuración [estado, funcion que maneja el estado]
     const [isStop, setStatus] = useState("stopped");
     //estado que me va a guardar el tiempo del cronometro
     const [time, setTime] = useState({ms: 0, s: 0, m: 0, h: 0});
     //estado que me va a iniciar o terminar el intervalo del cronometro
-    const [cronoInt, setCronoInt] = useState();
+    const [cronoInt, setCronoInt] = useState();//permite detener o iniciar el intervalo
     //estado que va a registrar las vueltas o marcas del cronometro
     const [vueltas, setVueltas] = useState([])
-
+    //variables para manipular los tiempos
     let ms = time.ms;
     let s = time.s;
     let m = time.m;
@@ -36,13 +35,15 @@ const Cronometro = () => {
             stopped()
             setStatus("stopped")           
         }
+        console.log(isStop)
+    
         // console.log(time)  
     }
 
     
     // funciones que hacen iniciar y detener el intervalo 
     //running llama a la funcion stopwatch cada 10 segundos mediante el useState setCronoInt
-    const running = () => setCronoInt(setInterval(stopWatch, 10));
+    const running = () => setCronoInt(setInterval(stopWatch, 10)); 
     //stopped detiene la funcion stopwatch limpiando el intervalo 
     const stopped = () => setCronoInt(clearInterval(cronoInt))
     
@@ -80,15 +81,15 @@ const Cronometro = () => {
         const vuelta = () => {
             //se agrega al arreglo vueltas el arreglo que ya esta y un objeto que ontiene el id y el tiempo en ese momento
             setVueltas([
-                ...vueltas,
+                ...vueltas,//esto es el arreglo que ya trae adentro
                 {
-                    id: vueltas.length,
-                    time: time
+                    id: vueltas.length,//numero
+                    time: time //lo que este dentro de time
                 }
     
             ]);
             // console.log(vueltas)
-
+        
         }
 
 
@@ -98,7 +99,8 @@ const Cronometro = () => {
             <div id="screen" className = {isStop === "running"? "inactive" : "active"}>
                 {/* dentro del div display llamamos el componente contador al cual le pasamos el time como prop */}
                 <div id="display">
-                    <Contador time = {time} />
+                    {/* llama al componente Contador y le pasa el props */}
+                    <Contador tiempo = {time} />
                 </div>
             </div>
             {/* llamamos el componente buttons y le pasamos sus props */}
