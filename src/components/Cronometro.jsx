@@ -1,9 +1,9 @@
 import React, {useState}from 'react';
-import ReactDOM from 'react-dom';
 import Buttons from './Buttons';
 import Contador from './Contador';
 
 const Cronometro = () => {
+   
     //variable que me guarda el tiempo en centesimas
     // const [miliS, setmiliS] = useState(0)
     //estado que me define si el cronometro esta corriendo o esta detenido
