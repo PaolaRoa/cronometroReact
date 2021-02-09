@@ -38,7 +38,8 @@
 
 
 #screen.inactive{
-    border-color: green;
+    border-color:rgb(0, 163, 0);
+    box-shadow: 0px 0px 50px rgb(0, 163, 0)
 }
 
 .buttons {
@@ -103,7 +104,7 @@ li{
     list-style: none;
     color: white;
     font-family: 'Press Start 2P', cursive;
-    font-size: 2vw;
+    font-size: 28px;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -123,14 +124,14 @@ h2{
 }
 
 .buttonIcon{
-    width: 5vw;
+    width: 60px;
 }
 
 .auxButton{
     background-color: purple;
     padding: 10px;
     margin:20px;
-    font-size: 2vw;
+    font-size: 24px;
     color: white;
     font-family: Russo One;
     vertical-align: 60%;
@@ -142,3 +143,14 @@ h2{
 }
 
 
+@media(max-width: 599px){
+    #display{
+        font-size: 24px;
+    }
+    #screen{
+        width: 90vw;
+    }
+    li{
+        font-size: 18px
+    }
+}
